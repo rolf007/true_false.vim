@@ -1,0 +1,50 @@
+*true_false_help.txt*	For Vim version 8.0	January 2018
+*true_false*
+==============================================================================
+       ______  ____  __ __    ___      _____   ____  _     _____   ___ 
+      [      [[    \[  [  [  /  _]    [     [ /    [[ [   / ___/  /  _]
+      [      [[  D  )  [  [ /  [_     [   __[[  o  [[ [  (   \_  /  [_ 
+      [_[  [_[[    /[  [  [[    _]    [  [_  [     [[ [___\__  [[    _]
+        [  [  [    \[  :  [[   [_     [   _] [  _  [[     /  \ [[   [_ 
+        [  [  [  .  \     [[     [    [  [   [  [  [[     \    [[     [
+        [__[  [__[\_[\__,_[[_____[    [__[   [__[__[[_____[\___[[_____[
+                                                                 
+==============================================================================
+CONTENTS                                                   *true-false-contents*
+
+    1. Intro..................................................|true-false-intro|
+    2. Functions..........................................|true-false-functions|
+
+==============================================================================
+INTRO                                                         *true-false-intro*
+This plugin provides an easy way to toggle 'true' and 'false' (or other user-
+defined lists of strings).
+As default, the plugin knows about a few common filetypes (cpp, python, vim)
+For instance, 'true' is called 'True' in Python.
+More filetypes can be added.
+
+==============================================================================
+FUNCTIONS                                                 *true-false-functions*
+                                                             *true_false#Toggle*
+Use 'Toggle' to toggle between 'true' and 'false'.
+Finds the next 'true' or 'false' from the cursor position.
+Just like |CTRL-A| and |CTRL-X|.
+You will prefer to put this to a mapping in your .vimrc, like this:
+>
+	nnoremap <silent> <M-A> :call true_false#Toggle()<CR>
+<
+                                                                *true_false#Add*
+Use 'Add' to add a new true-false definition for a given filetype.
+Put as many of these in your .vimrc as you want:
+>
+	call true_false#Add('text', ["TRUE","FALSE"])
+	call true_false#Add('schroedinger', ["dead","alive","both"])
+<
+                                                              *true_false#Clear*
+Use 'Clear' to clear all true-false definitions for a given filetype.
+
+                                                           *true_false#ClearAll*
+Use 'ClearAll' to clear all true-false definitions for all filetypes.
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:
